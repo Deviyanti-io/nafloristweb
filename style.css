@@ -1,0 +1,538 @@
+/* Reset & Base */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arima Madurai Black', sans-serif;
+  background: url(asset/background.png) no-repeat center center fixed;
+  background-size: cover;
+  color: #333;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 50px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+/* === Garis bawah hover animasi === */
+nav ul li a {
+  position: relative;
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+}
+
+nav ul li a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0;
+  height: 2px;
+  background: #d6336c;
+  transition: width 0.3s ease;
+  border-radius: 2px;
+}
+
+nav ul li a:hover,
+nav ul li a:focus-visible {
+  color: #d6336c;
+}
+
+nav ul li a:hover::after,
+nav ul li a:focus-visible::after {
+  width: 100%;
+}
+
+/* Highlight menu aktif */
+nav a.active {
+  color: #e86c8c;
+  border-bottom: 3px solid #e86c8c;
+  padding-bottom: 5px;
+}
+
+.auth-icons {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.auth-icons a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  padding: 5px 15px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+}
+
+.main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 50px;
+}
+
+.left {
+  max-width: 40%;
+}
+
+.left h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 110px;
+  color: #e86c8c;
+  line-height: 1.2;
+}
+
+.left p {
+  margin-top: 20px;
+  font-size: 16px;
+}
+
+.left .buttons {
+  margin-top: 30px;
+}
+
+.left .buttons a {
+  text-decoration: none;
+  padding: 10px 20px;
+  margin-right: 15px;
+  border-radius: 25px;
+  font-weight: bold;
+}
+
+.btn-primary {
+  background-color: #e86c8c;
+  color: #fff;
+}
+
+.btn-secondary {
+  color: #e86c8c;
+}
+
+.image-area {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.custom-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  color: #888;
+  font-size: 14px;
+}
+
+.image-area {
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.custom-image {
+  display: block;
+  width: 20000px;
+  height: auto;
+  max-width: unset;
+  object-fit: contain;
+  transform: translateX(-0px);
+}
+
+.about-section {
+  margin-top: 100px; /* jarak dari header */
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 50px;
+  padding: 80px 50px;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.about-text {
+  flex: 1;
+  max-width: 600px;
+}
+
+.about-text h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 60px;
+  color: #e86c8c;
+  margin-bottom: 20px;
+}
+
+.about-text p {
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.about-image {
+  flex: 1;
+  max-width: 500px;
+}
+
+.about-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.bouquet-section {
+  padding: 60px 50px;
+}
+
+.bouquet-section h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 60px;
+  color: #fff;
+  text-align: center;
+  margin-bottom: 40px;
+  background-color: #E1306C;
+  display: inline-block;
+  padding: 15px 40px;
+  border-radius: 40px;
+  box-shadow: 0 6px 15px rgba(225, 48, 108, 0.4);
+  transition: background-color 0.3s ease;
+}
+
+.bouquet-section h1:hover {
+  background-color: #AD1457;
+  box-shadow: 0 8px 18px rgba(173, 20, 87, 0.5);
+}
+
+.bouquet-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+.bouquet-card {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.bouquet-card img {
+  max-width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 15px;
+  margin-bottom: 15px;
+}
+
+.bouquet-card h3 {
+  font-size: 20px;
+  color: #e86c8c;
+  margin-bottom: 10px;
+}
+
+.bouquet-card p {
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+
+.bouquet-card a {
+  display: inline-block;
+  padding: 8px 20px;
+  background-color: #e86c8c;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 25px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.bouquet-card a:hover {
+  background-color: #d55778;
+}
+
+.btn-instagram-bottom {
+  display: inline-block;
+  padding: 12px 30px;
+  background-color: #E1306C;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 30px;
+  font-weight: bold;
+  font-size: 18px;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 4px 10px rgba(225, 48, 108, 0.4);
+}
+
+.btn-instagram-bottom:hover {
+  background-color: #AD1457;
+  box-shadow: 0 6px 15px rgba(173, 20, 87, 0.6);
+}
+
+.contact-container {
+  max-width: 1100px;
+  margin: 100px auto;
+  padding: 60px;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 25px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  position: relative;
+}
+
+.contact-container h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 55px;
+  color: #e86c8c;
+  margin-bottom: 40px;
+}
+
+.contact-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 40px;
+  margin-bottom: 50px;
+}
+
+.contact-item {
+  flex: 1 1 220px;
+  background: #fff;
+  padding: 25px;
+  border-radius: 20px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease;
+}
+
+.contact-item:hover {
+  transform: translateY(-8px);
+}
+
+.contact-item i {
+  font-size: 35px;
+  color: #e86c8c;
+  margin-bottom: 15px;
+}
+
+.contact-item p {
+  font-size: 16px;
+  color: #555;
+  margin: 0;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+
+.social-links a {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  background-color: #e86c8c;
+  color: white;
+  font-size: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.social-links a:hover {
+  transform: scale(1.1);
+  background-color: #d64c72;
+}
+
+.btn-selesai {
+  margin-top: 20px;
+  display: block;
+  width: 100%;
+  padding: 12px;
+  background-color: #6b183b;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  font-size: 16px;
+  cursor: pointer;
+  text-align: center;
+}
+
+.btn-selesai:hover {
+  background-color: #581233;
+}
+
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
+}
+
+.login-card {
+  background-color: #fff;
+  padding: 40px 30px;
+  border-radius: 20px;
+  box-shadow: 0px 0px 20px rgba(0,0,0,0.1);
+  text-align: center;
+  width: 350px;
+}
+
+.login-card h2 {
+  font-family: 'Playfair Display', serif;
+  color: #880e4f;
+  margin-bottom: 30px;
+}
+
+.input-group {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.input-group i {
+  position: absolute;
+  top: 12px;
+  left: 10px;
+  color: #880e4f;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 12px 12px 12px 36px;
+  border: 2px solid #f8bbd0;
+  border-radius: 10px;
+  font-size: 16px;
+  background-color: #fff0f5;
+}
+
+.btn-login, .btn-daftar {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 10px;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.btn-login {
+  background: linear-gradient(to right, #d81b60, #ad1457);
+  color: white;
+}
+
+.btn-daftar {
+  background: linear-gradient(to right, #f06292, #ec407a);
+  color: white;
+  text-decoration: none;
+  text-align: center;
+}
+
+.btn-login:hover, .btn-daftar:hover {
+  opacity: 0.9;
+}
+
+@media (max-width: 500px) {
+  .login-card {
+    width: 90%;
+    padding: 30px 20px;
+  }
+
+  .login-card h2 {
+    font-size: 20px;
+  }
+
+  .input-group input {
+    font-size: 14px;
+  }
+
+  .btn-login, .btn-daftar {
+    font-size: 14px;
+  }
+}
+
+.logo-logout {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.logout-icon {
+  color: #e86c8c;
+  font-size: 22px;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.logout-icon:hover {
+  color: #ad1457;
+}
+
+.selesai-btn {
+  display: inline-block;
+  background-color: #e91e63;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.selesai-btn:hover {
+  background-color: #c2185b;
+}
+
+.riwayat-actions {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.riwayat-actions a {
+  display: inline-block;
+  margin: 10px 15px;
+  padding: 12px 25px;
+  background-color: #e91e63;
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 30px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.riwayat-actions a:hover {
+  background-color: #c2185b;
+  transform: scale(1.05);
+}

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NaFlorist</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      height: 100vh;
+      background: url('asset/bgdepan.jpg') no-repeat center center/cover;
+      font-family: 'Arial', sans-serif;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end; /* Penting: tombol di bawah */
+      align-items: center;
+    }
+
+    .btn-masuk {
+      margin-bottom: 40px;
+      padding: 12px 30px;
+      font-size: 18px;
+      background-color: #e86c8c;
+      border: none;
+      border-radius: 30px;
+      color: white;
+      cursor: pointer;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+      transition: background-color 0.3s;
+    }
+
+    .btn-masuk:hover {
+      background-color: #c94a6b;
+    }
+  </style>
+</head>
+<body>
+  <button class="btn-masuk" onclick="location.href='index.html'">Masuk</button>
+</body>
+</html>
